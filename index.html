@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ແນະນຳສະຖານທີ່ທ່ອງທ່ຽວ: ຂຸນກອງແລງ ເມືອງຫີນບູນ ແຂວງຄຳມ່ວນ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Lao:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --accent: #0d9488;
+      --bg: #f0f9ff;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --radius: 16px;
+      --shadow: 0 10px 25px -5px rgba(2, 132, 199, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans Lao', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 75vh;
+      min-height: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #ffffff;
+      background: linear-gradient(rgba(15, 23, 42, 0.45), rgba(15, 23, 42, 0.65)),
+                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      padding: 2rem;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(13, 148, 136, 0.9);
+      padding: 0.4rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.25rem);
+      opacity: 0.95;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 4rem 1.5rem;
+    }
+
+    /* About Section */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      background: var(--card-bg);
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-top: -4rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .about img {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .about h2 {
+      color: var(--primary-dark);
+      font-size: 1.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .about p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .highlights {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.2rem;
+    }
+
+    .highlight-tag {
+      background: #e0f2fe;
+      color: var(--primary-dark);
+      padding: 0.4rem 0.9rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Section Header */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.1rem;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Activities Grid */
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-main);
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* Tips Banner */
+    .tips-box {
+      background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+      color: #ffffff;
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin-top: 4rem;
+    }
+
+    .tips-box h2 {
+      margin-bottom: 1.2rem;
+      font-size: 1.6rem;
+    }
+
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tip-item {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 1.2rem;
+      border-radius: 12px;
+    }
+
+    .tip-item h4 {
+      margin-bottom: 0.4rem;
+      font-size: 1.05rem;
+    }
+
+    .tip-item p {
+      font-size: 0.9rem;
+      opacity: 0.92;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .about {
+        grid-template-columns: 1fr;
+        margin-top: -2rem;
+        padding: 1.5rem;
+      }
+      .about img {
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">ແຫຼ່ງທ່ອງທ່ຽວທຳມະຊາດແຫ່ງໃໝ່ • ແຂວງຄຳມ່ວນ</span>
+      <h1>ຂຸນກອງແລງ ເມືອງຫີນບູນ</h1>
+      <p>ສຳຜັດຄວາມມະຫັດສະຈັນຂອງໜອງນ້ຳສີຟ້າອົມຂຽວທີ່ໃສເຢັນ ອ້ອມຮອບດ້ວຍພູຫີນປູນ ແລະ ທຳມະຊາດອັນບໍລິສຸດ</p>
+      <a href="#activities" class="btn">ສຳຫຼວດກິດຈະກຳທັງໝົດ</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 2. About Section -->
+    <section class="about">
+      <img src="too.jpeg" alt="ທິວທັດໜອງນ້ຳສີຟ້າຂຸນກອງແລງ">
+      <div>
+        <h2>ທຳຄວາມຮູ້ຈັກກັບ "ຂຸນກອງແລງ"</h2>
+        <p>
+          <strong>ຂຸນກອງແລງ</strong> ຕັ້ງຢູ່ເມືອງຫີນບູນ ແຂວງຄຳມ່ວນ ເປັນແຫຼ່ງທ່ອງທ່ຽວທຳມະຊາດທີ່ກຳລັງໄດ້ຮັບຄວາມນິຍົມ. ຈຸດເດັ່ນແມ່ນໜອງນ້ຳທຳມະຊາດທີ່ມີສີຟ້າອົມຂຽວໃສສະອາດ ໄຫຼອອກມາຈາກຕີນພູຫີນປູນ ໃຫ້ບັນຍາກາດສົດຊື່ນ ແລະ ງຽບສະຫງົບ.
+        </p>
+        <p>
+          ເໝາະສຳລັບການພັກຜ່ອນກັບຄອບຄົວ, ໝູ່ເພື່ອນ ຫຼື ຜູ້ທີ່ມັກການທ່ອງທ່ຽວແບບໃກ້ຊິດທຳມະຊາດ ແລະ ຫຼິ້ນກິດຈະກຳທາງນ້ຳ.
+        </p>
+        <div class="highlights">
+          <span class="highlight-tag">💧 ນ້ຳໃສສີຟ້າອົມຂຽວ</span>
+          <span class="highlight-tag">⛰️ ວິວພູຫີນປູນ</span>
+          <span class="highlight-tag">🚣 ກິດຈະກຳຫຼາກຫຼາຍ</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Activities Section -->
+    <section id="activities" style="margin-top: 4.5rem;">
+      <div class="section-header">
+        <h2>ແນະນຳກິດຈະກຳທີ່ໜ້າຫຼິ້ນຢູ່ຂຸນກອງແລງ</h2>
+        <p>ມ່ວນຊື່ນໄປກັບຫຼາກຫຼາຍກິດຈະກຳທ່າມກາງທຳມະຊາດທີ່ສວຍງາມ ພ້ອມມຸມຖ່າຍຮູບສຸດປະທັບໃຈ</p>
+      </div>
+
+      <div class="activities-grid">
+        <!-- Activity 1 -->
+        <article class="card">
+          <img src="woo.jpeg" alt="ລົງຫຼິ້ນນ້ຳສີຟ້າໃສ">
+          <div class="card-body">
+            <span class="card-tag">ກິດຈະກຳຍອດນິຍົມ</span>
+            <h3>1. ລົງຫຼິ້ນນ້ຳ & ແຊ່ນ້ຳເຢັນສົດຊື່ນ</h3>
+            <p>ຜ່ອນຄາຍຮ່າງກາຍດ້ວຍການລົງລອຍນ້ຳໃນໜອງນ້ຳສີຟ້າໃສເຢັນສະບາຍ ທ່າມກາງຮົ່ມໄມ້ຂຽວງາມ ແລະ ອາກາດບໍລິສຸດ.</p>
+          </div>
+        </article>
+
+        <!-- Activity 2 -->
+        <article class="card">
+          <img src="roo.jpeg" alt="ພາຍເຮືອຄາຍັກ ແລະ ລອຍຫ່ວງຢາງ">
+          <div class="card-body">
+            <span class="card-tag">ຜະຈົນໄພເບົາໆ</span>
+            <h3>2. ພາຍເຮືອຄາຍັກ & ລອຍຫ່ວງຢາງ</h3>
+            <p>ສຳຫຼວດຄວາມງາມຕາມສາຍນ້ຳດ້ວຍການພາຍເຮືອ ຫຼື ນອນລອຍຫ່ວງຢາງຊົມທິວທັດສອງຝັ່ງນ້ຳ ແລະ ກ້ອນຫີນທຳມະຊາດ.</p>
+          </div>
+        </article>
+
+        <!-- Activity 3 -->
+        <article class="card">
+          <img src="in.jpeg" alt="ຖ່າຍຮູບເຊັກອິນທິວທັດທຳມະຊາດ">
+          <div class="card-body">
+            <span class="card-tag">ສາຍຖ່າຍຮູບ</span>
+            <h3>3. ຖ່າຍຮູບເຊັກອິນມຸມສວຍ</h3>
+            <p>ເກັບພາບຄວາມຊົງຈຳກັບສີນ້ຳຟ້າ-ຂຽວທີ່ຕັດກັບພູຫີນປູນ ແລະ ຂົວໄມ້/ຈຸດຊົມວິວຕ່າງໆ ທີ່ຖ່າຍມຸມໃດກໍງາມ.</p>
+          </div>
+        </article>
+
+        <!-- Activity 4 -->
+        <article class="card">
+          <img src="tam.jpeg" alt="ນັ່ງປິກນິກ ແລະ ພັກຜ່ອນริมນ້ຳ">
+          <div class="card-body">
+            <span class="card-tag">ພັກຜ່ອນຄອບຄົວ</span>
+            <h3>4. ນັ່ງພັກຜ່ອນ & ປິກນິກແຄມນ້ຳ</h3>
+            <p>ນັ່ງພັກຜ່ອນຢູ່ຕູບແຄມນ້ຳ ຫຼື ໃຕ້ຮົ່ມໄມ້ ຮັບປະທານອາຫານທ້ອງຖິ່ນແຊບໆ ພ້ອມຟັງສຽງນ້ຳໄຫຼ ແລະ ສຽງນົກຮ້ອງ.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Travel Tips -->
+    <section class="tips-box">
+      <h2>📌 ຄຳແນະນຳກ່ອນອອກເດີນທາງ</h2>
+      <div class="tips-grid">
+        <div class="tip-item">
+          <h4>🎒 ການກຽມຕົວ</h4>
+          <p>ກຽມຊຸດຫຼິ້ນນ້ຳ, ຜ້າເຊັດຕົວ, ຖົງກັນນ້ຳສຳລັບໂທລະສັບ ແລະ ເກີບທີ່ຍ່າງສະດວກບ່ອນປຽກ.</p>
+        </div>
+        <div class="tip-item">
+          <h4>🦺 ຄວາມປອດໄພ</h4>
+          <p>ໃສ່ເສື້ອຊູຊີບທຸກຄັ້ງເມື່ອລົງນ້ຳເລິກ ຫຼື ພາຍເຮືອ ແລະ ລະມັດລະວັງບ່ອນໂຂດຫີນລື່ນ.</p>
+        </div>
+        <div class="tip-item">
+          <h4>🌿 ຮັກສາສິ່ງແວດລ້ອມ</h4>
+          <p>ຊ່ວຍກັນຮັກສາຄວາມສະອາດ ບໍ່ຖິ້ມຂີ້ເຫຍື້ອລົງນ້ຳ ເພື່ອໃຫ້ຂຸນກອງແລງສວຍງາມຕະຫຼອດໄປ.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 ແນະນຳການທ່ອງທ່ຽວ ຂຸນກອງແລງ - ເມືອງຫີນບູນ ແຂວງຄຳມ່ວນ ສປປ ລາວ</p>
+  </footer>
+
+</body>
+</html>
+<style>
+  .adventure-section {
+    max-width: 1140px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    font-family: 'Noto Sans Lao', sans-serif;
+  }
+
+  .adventure-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .adventure-header h2 {
+    font-size: 2rem;
+    color: #0369a1;
+    margin-bottom: 0.5rem;
+  }
+
+  .adventure-header p {
+    color: #475569;
+  }
+
+  .activity-row {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 2rem;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 24px rgba(2, 132, 199, 0.08);
+  }
+
+  .activity-row:nth-child(even) .activity-media {
+    order: 2;
+  }
+
+  .activity-media img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
+
+  .activity-badge {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    margin-bottom: 0.7rem;
+  }
+
+  .activity-content h3 {
+    font-size: 1.45rem;
+    color: #0f172a;
+    margin-bottom: 0.6rem;
+  }
+
+  .activity-content p {
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+  }
+
+  .activity-meta {
+    font-size: 0.9rem;
+    color: #0d9488;
+    font-weight: 600;
+  }
+
+  /* Photo Spots Sub-grid */
+  .photo-spots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .photo-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .photo-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .photo-card-body {
+    padding: 1rem;
+  }
+
+  .photo-card-body h4 {
+    font-size: 1.05rem;
+    color: #0f172a;
+    margin-bottom: 0.35rem;
+  }
+
+  .photo-card-body p {
+    font-size: 0.88rem;
+    color: #64748b;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .activity-row {
+      grid-template-columns: 1fr;
+    }
+    .activity-row:nth-child(even) .activity-media {
+      order: 0;
+    }
+    .activity-media img {
+      height: 210px;
+    }
+  }
+</style>
+
+<section class="adventure-section" id="more-activities">
+  <div class="adventure-header">
+    <h2>ກິດຈະກຳຜະຈົນໄພ &amp; ຈຸດຖ່າຍຮູບຫ້າມພາດ</h2>
+    <p>ເພີ່ມຄວາມມ່ວນ ແລະ ຄວາມຕື່ນເຕັ້ນໃຫ້ກັບການທ່ຽວຂຸນກອງແລງ ດ້ວຍກິດຈະກຳຫຼາກຫຼາຍຮູບແບບ</p>
+  </div>
+
+  <!-- 1. ພາຍເຮືອ -->
+  <article class="activity-row">
+    <div class="activity-media">
+      <img src="lio.jpeg" alt="ຈຸດຊົມວິວສູງສຸດ">
+    </div>
+    <div class="activity-content">
+      <span class="activity-badge">ຢ່າງຂຶ້ນໃຫ້ໄປຮອດຈຸດຊົມວິວ</span>
+      <h3></h3>
+      <p> ສຳຜັດຄວາມງຽບສະຫງົບ ແລະ ຊົມຕົ້ນໄມ້-ໂຂດຫີນປູນສອງຝັ່ງນ້ຳແບບໃກ້ຊິດ ເໝາະທັງສາຍຊິວ ແລະ ສາຍຖ່າຍຮູບ.</p>
